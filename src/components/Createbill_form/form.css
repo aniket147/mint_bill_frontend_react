@@ -1,14 +1,10 @@
-/* h1 {
+h1 {
     color: grey;
 }
 
-.container {
-    position : relative;
-    margin-top: 250px;
+.createbillForm {
+    margin-top: 170px;
     align-items: center;
-}
-
-.createbill-form {
     position: absolute;
     text-align: center;
     left: 50%;
@@ -20,7 +16,7 @@ input::placeholder {
     font-weight: bold;
 }
 
-input {
+.field {
     width: 200px;
     height: 25px;
     border: 0;
@@ -29,13 +25,26 @@ input {
     padding-right: 25px;
 }
 
-input[type="checkbox"] {
+.check {
+    position: absolute;
+    top: 300px;
     width: 12px;
     height: 12px;
-    margin-left: -120px;
+    margin-left: -230px;
+}
+.checktext {
+    color: grey;
+    font-size: small;
+    position: absolute;
+    margin-left: -210px;
+    top: 300px;
 }
 
-input[type="button"] {
+.button {
+    position: absolute;
+    top: 350px;
+    transform: translate(-210%,0);
+    width: 80px;
     color: white;
     background-color: rgb(233, 77, 77);
     height: 35px;
@@ -50,10 +59,23 @@ input[type="button"] {
     height: 350px;
 }
 
- #rightbound {
+#rightbound {
     right: 0;
 }
 
-#button:hover {
+.button:hover {
     opacity: 0.6;
-} */
+}
+
+.f1 {
+    position: relative;
+    top: 10px;
+}
+.f2 {
+    position: relative;
+    top: 55px;
+}
+.f3 {
+    position: relative;
+    top: 100px;
+}

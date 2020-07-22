@@ -1,0 +1,88 @@
+.container {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.landing img {
+    width: 100%;
+    height: 400px;
+}
+
+.landing {
+    position: relative;
+    align-self: center;
+}
+
+#landinghead {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+#landingsub {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+.landing div {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 300px;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.landing span {
+    position: absolute;
+    text-align: center;
+    font-size: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.switch {
+    width: 160px;
+    height: 27px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border: 2px solid cyan;
+    border-radius: 5px;
+}
+.switch1 {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+    position: relative;
+    left: 0;
+    color: white;
+    font-weight: solid;
+    background-color: cyan;
+    cursor: pointer;
+    font-size: large;
+}
+.switch2 {
+    padding: 2px;
+    left: 10%;
+    position: relative;
+    color: cyan;
+    font-weight: solid;
+    cursor: pointer;
+}

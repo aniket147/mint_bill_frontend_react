@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './List.css';
 
 class DisplayListPaid extends Component {
     handleDelete = (e) => {
@@ -9,32 +10,32 @@ class DisplayListPaid extends Component {
     }
     render() {
         let del = (id) => {
-            return <button id={id} onClick={this.handleDelete}>Delete</button>
+            return <button className="list_btn" id={id} onClick={this.handleDelete}>Delete</button>
         }
         let ele = (id) => {
-            return <button id={id} onClick={this.handleEdit}>Edit</button>
+            return <button className="list_btn" id={id} onClick={this.handleEdit}>Edit</button>
         }
         let list = this.props.entry;
         let data = list.map((n) =>
-            <tbody>
+            <tbody className="tableBody">
                 <tr>
-                    <td>{n.name}</td>
-                    <td>{n.amount}</td>
-                    <td>{n.date}</td>
+                    <td className="tabledate t">{n.date}</td>
+                    <td className="tablename t">{n.name}</td>
+                    <td className="tableamount t">${n.amount}</td>
                     <td>{ele(n.name)}</td>
                     <td>{del(n.name)}</td>
                 </tr>
             </tbody>
         );
         return (
-            <div>
-                <h1>Paid Bills</h1>
+            <div className="tableContainer">
+                <h1 className="tableHead">Paid Bills</h1>
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Bill Title</th>
-                            <th>Amount</th>
-                            <th>Cleared On</th>
+                            <th className="tabledate h">Cleared On</th>
+                            <th className="tablename h">Bill Title</th>
+                            <th className="tableamount h">Amount</th>
                             <th></th>
                             <th></th>
                         </tr>

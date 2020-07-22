@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './../Createbill_form/form.css';
 
 class Editbill_form extends Component {
     constructor(props) {
@@ -45,17 +46,17 @@ class Editbill_form extends Component {
         console.log(this.props.billTitle);
         return (
             <div className="createbillForm">
-                <div>
+                <div className="formHeading">
                     <h1>Edit Bill</h1>
                 </div>
                 <div className="form-boundary"/>
                 <div className="form-boundary" id="rightbound" />
-                <form onSubmit={this.handleClick}>
-                    <input type="text" onChange={this.changeTitle} name="billTitle" id="bilTitle" placeholder="Bill Title*" value={this.state.billTitle}/>
-                    <input type="number" onChange={this.changeAmount} placeholder="Bill Amount*" name="billAmount" id="billAmount" value={this.state.billAmount}/>
-                    <input type="text" onChange={this.changeDate} placeholder="Bill Date*" name="billDate" id="billDate" value={this.state.billDate}/>
-                    <input type="checkbox" name="checkBox" id="checkBox" value={this.state.status} checked={this.state.isChecked} onChange={this.setCheck}/><label for="checkBox">{this.state.status}</label>
-                    <input type="submit" value="Create" />
+                <form className="formItems" onSubmit={this.handleClick}>
+                    <input className="field f1" type="text" onChange={this.changeTitle} name="billTitle" id="bilTitle" placeholder="Bill Title*" value={this.state.billTitle}/>
+                    <input className="field f2" type="number" onChange={this.changeAmount} placeholder="Bill Amount*" name="billAmount" id="billAmount" value={this.state.billAmount}/>
+                    <input className="field f3" type="text" onChange={this.changeDate} placeholder="Bill Date*" name="billDate" id="billDate" value={this.state.billDate}/>
+                    <input className="check f4" type="checkbox" name="checkBox" id="checkBox" value={this.state.status} checked={this.state.isChecked} onChange={this.setCheck}/><label className="checktext" for="checkBox">{this.state.status}</label>
+                    <input className="button f5" type="submit" value="Edit" />
                 </form>
             </div>
         );

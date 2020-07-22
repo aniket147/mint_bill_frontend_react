@@ -1,0 +1,40 @@
+.table {
+    border-top: solid grey;
+    border-collapse: collapse;
+    width: 700px;
+}
+.tableContainer {
+    position: absolute;
+    left: 30px;
+    margin-bottom: 200px;
+}
+.tableBody {
+    border-top: solid grey;
+    border-width: 1px;
+}
+.list_btn {
+    color: white;
+    background-color: orange;
+    border-radius: 8px;
+    margin: 5px;
+}
+.t {
+    margin: 5px;
+    font-style: italic;
+    color: orange;
+}
+.h {
+    margin: 5px;
+    color: orangered;
+    font-style: oblique;
+}
+.tablename {
+    width: 300px;
+    text-align: center;
+}
+.tableamount {
+    text-align: center;
+}
+.tabledate {
+    text-align: left;
+}

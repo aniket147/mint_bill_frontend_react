@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Createbill_form from './components/Createbill_form/Createbill_form.jsx';
-import './Homepage.css';
+import './App.css';
 import landingimage from './components/images/landing_image.jpg';
 import DisplayListUpcoming from './components/DisplayList/DisplayListUpcoming.jsx';
 import DisplayListPaid from './components/DisplayList/DisplayListPaid.jsx';
@@ -149,15 +149,15 @@ class App extends Component {
                       </div>
                   </div>
                   <div className="switch">
-                      <a onClick={this.handleUpcoming}>Upcoming</a>
-                      <a onClick={this.handlePaid}>Paid</a>
+                      <a className="switch1" onClick={this.handleUpcoming}>Upcoming</a>
+                      <a className="switch2" onClick={this.handlePaid}>Paid</a>
                   </div>
                   {(this.state.bills === 'upcoming') ?
                   <DisplayListUpcoming entry={this.state.entryUpcoming} editEntry={this.editEntry} deleteEntry={this.deleteEntry}/>:
                   <DisplayListPaid entry={this.state.entryPaid} editEntry={this.editEntry} deleteEntry={this.deleteEntry}/> }
               </div>
 
-            {/* <Footer /> */}
+            <Footer />
           </div>
         );
     }
@@ -169,7 +169,7 @@ class App extends Component {
           <Createbill_form  
             onChange={this.handleClickCreate}
           />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       );
     }
@@ -185,7 +185,7 @@ class App extends Component {
             billDate={this.state.billDate}
             status={this.state.status}
           />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       );
     }
