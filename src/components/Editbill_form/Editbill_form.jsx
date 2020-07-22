@@ -30,7 +30,8 @@ class Editbill_form extends Component {
             'billAmount': this.state.billAmount,
             'billDate': this.state.billDate,
             'status': this.state.status,
-            'searchId': this.props.billTitle
+            'searchId': this.props.billTitle,
+            'searchStatus': this.props.status
         });
     }
     changeTitle = (e) => {

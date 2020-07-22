@@ -42,29 +42,57 @@ class App extends Component {
   handleClickEdit = (params) => {
     console.log(params.billTitle);
     console.log(params.searchId);
-    if(params.status === 'Advance'){
-      let arr = [];
-      for(var i=0; i<this.state.entryUpcoming.length; i++){
-        if(this.state.entryUpcoming[i].name === params.searchId){
-          arr = [...arr,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+    if(params.status === this.state.status){
+      if(params.status === 'Advance'){
+        console.log('equal');
+        let arr = [];
+        for(var i=0; i<this.state.entryUpcoming.length; i++){
+          if(this.state.entryUpcoming[i].name === params.searchId){
+            arr = [...arr,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+          }
+          else {
+            arr = [...arr,{name: this.state.entryUpcoming[i].name, amount: this.state.entryUpcoming[i].amount, date: this.state.entryUpcoming[i].date, id: this.state.entryUpcoming[i].id}];
+          }
         }
-        else {
-          arr = [...arr,{name: this.state.entryUpcoming[i].name, amount: this.state.entryUpcoming[i].amount, date: this.state.entryUpcoming[i].date, id: this.state.entryUpcoming[i].id}];
-        }
+        this.setState({entryUpcoming: arr});
       }
-      this.setState({entryUpcoming: arr});
+      else {
+        let arr = [];
+        for(var i=0; i<this.state.entryPaid.length; i++){
+          if(this.state.entryPaid[i].name === params.searchId){
+            arr = [...arr,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+          }
+          else {
+            arr = [...arr,{name: this.state.entryPaid[i].name, amount: this.state.entryPaid[i].amount, date: this.state.entryPaid[i].date, id: this.state.entryPaid[i].id}];
+          }
+        }
+        this.setState({entryPaid:arr});
+      }
     }
-    else {
-      let arr = [];
-      for(var i=0; i<this.state.entryPaid.length; i++){
-        if(this.state.entryPaid[i].name === params.searchId){
-          arr = [...arr,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+    else{
+      console.log('unequal');
+      if(params.status === 'Advance'){
+        let arr = [];
+        for(var i=0; i<this.state.entryPaid.length; i++){
+          if(this.state.entryPaid[i].name !== params.searchId){
+            arr = [...arr,{name: this.state.entryPaid[i].name, amount: this.state.entryPaid[i].amount, date: this.state.entryPaid[i].date, id: this.state.entryPaid[i].id}];
+          }
         }
-        else {
-          arr = [...arr,{name: this.state.entryPaid[i].name, amount: this.state.entryPaid[i].amount, date: this.state.entryPaid[i].date, id: this.state.entryPaid[i].id}];
-        }
+        this.setState({entryPaid: arr});
+        let ar = [...this.state.entryUpcoming,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+        this.setState({entryUpcoming:ar});
       }
-      this.setState({entryPaid:arr});
+      else {
+        let arr = [];
+        for(var i=0; i<this.state.entryUpcoming.length; i++){
+          if(this.state.entryUpcoming[i].name !== params.searchId){
+            arr = [...arr,{name: this.state.entryUpcoming[i].name, amount: this.state.entryUpcoming[i].amount, date: this.state.entryUpcoming[i].date, id: this.state.entryUpcoming[i].id}];
+          }
+        }
+        this.setState({entryUpcoming: arr});
+        let ar = [...this.state.entryPaid,{name: params.billTitle, amount: params.billAmount, date: params.billDate, id: params.searchId}];
+        this.setState({entryPaid:ar});
+      }
     }
     this.setState({
       'page': 'home',
